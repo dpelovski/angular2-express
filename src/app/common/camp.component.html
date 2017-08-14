@@ -1,0 +1,94 @@
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+        <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                        <h1 class="title">Всички лагери</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                    <div *ngFor='let camp of camps' class="col-md-6 col-sm-12 blog-padding-right">
+                        <div class="single-blog two-column">
+                            <div class="post-thumb">
+                                <a a routerLink='/camps/{{camp.name}}'><img src="{{camp.imageUrl}}" class="img-responsive" alt=""></a>
+                                <div class="post-overlay">
+                                    <span class="uppercase"><a routerLink='/camps/{{camp.name}}'>14 <br><small>Feb</small></a></span>
+                                </div>
+                            </div>
+                            <div class="post-content overflow">
+                                <h2 class="post-title bold"><a routerLink='/camps/{{camp.name}}'>{{camp.name}}</a></h2>
+                                <p>{{camp.shortDescription}}</p>
+                                <a routerLink='/camps/{{camp.name}}' class="read-more">View More</a>
+                                <div class="post-bottom overflow">
+                                    <ul class="nav nav-justified post-nav">
+                                        <li><a href="#"><i class="fa fa-tag"></i>{{bgCategoryWords[camp.category]}}</a></li>
+                                        <li><a href="#"><i class="fa fa-child"></i>{{bgAges[camp.ageGroup]}}</a></li>
+                                        <li><a href="#"><i class="fa fa-clock-o"></i>{{camp.timePeriod}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="blog-pagination">
+                    <ul class="pagination">
+                    <li><a href="#">left</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li class="active"><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">right</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-5">
+                <div class="sidebar blog-sidebar">
+                    <div class="sidebar-item categories">
+                        <h3>Категории</h3>
+                        <ul class="nav navbar-stacked" *ngIf='camps'>
+                            <li class="active"><a href="#">Всички лагери<span class="pull-right">({{camps.length}})</span></a></li>
+                            <li><a href="#">Еднодневни маршрути<span class="pull-right">({{ednCount}})</span></a></li>
+                            <li><a href="#">Детски лагери<span class="pull-right">({{detskiCount}})</span></a></li>
+                            <li><a href="#">Екскурзионни летувания<span class="pull-right">({{eksCount}})</span></a></li>
+                            <li><a href="#">Поръчкови лагери<span class="pull-right">(3)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-item tag-cloud">
+                        <h3>Възрастови групи</h3>
+                        <ul class="nav nav-pills">
+                            <li><a href="#">6-12г.</a></li>
+                            <li><a href="#">9-14г.</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-item popular">
+                        <h3>Последни снимки от мероприятия</h3>
+                        <ul class="gallery">
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular1.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular2.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular3.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular4.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular5.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="../../assets/images/portfolio/popular1.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

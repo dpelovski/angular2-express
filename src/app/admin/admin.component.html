@@ -1,0 +1,33 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div><i class="fa fa-fw fa-user"></i>Здравей, {{username}}</div>
+  <ul class="nav navbar-nav side-nav">
+      
+      <li>
+          <a href='javascript:void(0)' (click)='show(1)'><i class="fa fa-fw fa-plus"></i>Създай лагер</a>
+      <li>
+      <li>
+          <a href='javascript:void(0)' (click)='show(2)'><i class="fa fa-fw fa-edit"></i>Редактиране</a>
+      </li>
+      <li>
+          <a href='javascript:void(0)' (click)='show(3)'><i class="fa fa-fw fa-upload"></i>Качи снимки</a>
+      </li>
+      <li>
+          <a href='javascript:void(0)' (click)='logout()'><i class="fa fa-fw fa-sign-out"></i>Изход</a>
+      </li>
+      <!-- <li>
+          <a><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+      </li> -->
+      <!-- <li>
+          <a><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+      </li> -->
+  </ul>
+</div>
+<div *ngIf='selectedIndex === 1'>
+  <create-camp></create-camp>
+</div>
+<div *ngIf='selectedIndex === 2'>
+    <list-camps></list-camps>
+  </div>
+<div *ngIf='selectedIndex === 3'>
+    <upload></upload>
+</div>
